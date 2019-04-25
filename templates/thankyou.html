@@ -1,0 +1,31 @@
+{% extends "basic.html" %}
+
+{% block content %}
+
+<div class="container">
+
+<div class="jumbotron">
+    {% if number and uppercase and lowwecase %}
+        <h1>All requiedmets Are Done!</h1>
+    {% elif number and uppercase %}
+       <h1>lowwecase Error</h1>
+       {% elif number and lowwecase %}
+          <h1>uppercase Error</h1>
+          {% elif lowwecase and uppercase %}
+             <h1>number Error</h1>
+
+             {% elif number %}
+                <h1>lowwecase and uppercase Error</h1>
+                {% elif  uppercase %}
+                   <h1>lowwecase and number Error</h1>
+                   {% elif lowwecase %}
+                      <h1>number and uppercase Error</h1>
+                 {% else %}
+                 <h1>Not one requiedmets are Done!</h1>
+
+        {% endif %}
+
+</div>
+</div>
+
+{% endblock %}
